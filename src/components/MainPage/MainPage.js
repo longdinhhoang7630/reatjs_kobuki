@@ -5,6 +5,7 @@ import { Button, Container, Col, Row } from 'react-bootstrap';
 import Parameters from "../Parameters/Parameters";
 import Map from "../Map/Map";
 import Camera from "../Camera/Camera";
+import Camera2 from "../Camera/Camera2";
 import Controller from "../Controller/Controller";
 import Status from "../Status/Status";
 import Header from "../Header/Header";
@@ -140,7 +141,8 @@ class MainPage extends Component {
 
   render() {
     return (
-      <Container fluid className="container-center">
+      <body className="text-center bg-dark">
+        <h1 style={{color: "rgb(177, 235, 177)"}}>ROBOT WEB INTERFACE</h1>
         {/* <Row>
           <Col>
             <Container>
@@ -155,6 +157,7 @@ class MainPage extends Component {
             <Row>
               <Col>{this.state.isConnectedWS ? <Camera ros={this.ros} /> : <Camera ros={null} />}</Col>
             </Row>
+             
             <Row>
               <Col>{this.state.isConnectedWS ? <Status ros={this.ros} /> : <Status ros={null} />}</Col>
             </Row>
@@ -175,6 +178,9 @@ class MainPage extends Component {
           </Col>
           <Col>
             <Row>
+              <Col>{this.state.isConnectedWS ? <Camera2 ros={this.ros} /> : <Camera2 ros={null} />}</Col>
+            </Row>
+            <Row>
               <Col>{this.state.isConnectedWS ?
                 <Controller ros={this.ros} linearVel={this.state.linearVel} angularVel={this.state.angularVel} /> : 
                 <Controller ros={null}/>}
@@ -190,7 +196,7 @@ class MainPage extends Component {
             </Row>
           </Col>
         </Row>
-      </Container>
+      </body>
     )
   }
 }

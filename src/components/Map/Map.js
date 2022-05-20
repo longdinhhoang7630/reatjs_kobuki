@@ -171,16 +171,17 @@ class Map extends Component {
 
   render() {
     return (
-      <Container className="box-margin">
-        <Card border="secondary">
-          <Card.Header style={{fontSize: "1.2rem" }}><strong>Map</strong></Card.Header>
-          <Card.Body>
+      <Container className="box-margin" style={{ marginRight: "-32px", marginLeft: "-32px" ,width: "auto"}}>
+       <div className="card ml-2 border-white bg-dark">
+          <h5 className="text-white align-middle" style={{ fontSize: "24px", paddingTop:"10px" }}><strong>Map</strong></h5>
+          <hr style={{borderTop: "1px solid rgb(177,235,177)"}}></hr>
+          <div style={{ padding: "1rem 0rem 0rem 0rem" }}>
             <Container className="map-container" id="map">
               <Container className="map-controller">
                 <Button className="map-button" variant='danger' onClick={() => this.setState({ command: 'SetGoal', message: 'Send goal to your robot' })}>Set Goal</Button>
                 {/* <Button className="map-button" variant='outline-danger' onClick={() => this.setState({command: 'CancelGoal'})}>Cancel Goal</Button> */}
-                <Button className="map-button" variant='success' onClick={() => this.setState({ command: 'AddStation', message: 'Add new station', stationName: 'NoName' })}>Add Station</Button>
-                <Button className="map-button" variant='outline-success' onClick={() => this.setState({ command: 'DeleteStation', message: 'Click to delete station' })}>Delete Station</Button>
+                {/* <Button className="map-button" variant='success' onClick={() => this.setState({ command: 'AddStation', message: 'Add new station', stationName: 'NoName' })}>Add Station</Button> */}
+                {/* <Button className="map-button" variant='outline-success' onClick={() => this.setState({ command: 'DeleteStation', message: 'Click to delete station' })}>Delete Station</Button> */}
                 <Button className="map-button" variant='warning' onClick={() => this.setState({ command: 'none', message: 'Robot is ready !' })}>Cancel</Button>
               </Container>
                 <Container style={{ width: "28rem", height: "4rem" }}>
@@ -205,8 +206,8 @@ class Map extends Component {
                 imageRobot={require('./jarvis.png')}
                 imageGoalArrow={require('./arrow-red.png')}
                 imageStationArrow={require('./arrow-green.png')}
-                width={720}
-                height={480}
+                width={700}
+                height={500}
                 ros={this.ros}
                 topic='/map'
                 topic_costmap='/move_base_node/global_costmap/costmap'
@@ -230,8 +231,8 @@ class Map extends Component {
                 </Button>
               </Container>
             </Container>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </Container>
     )
   }

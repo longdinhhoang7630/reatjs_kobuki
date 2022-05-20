@@ -41,9 +41,10 @@ class Status extends Component {
   render() {
     return (
       <Container className="box-margin">
-        <Card border="secondary">
-          <Card.Header style={{fontSize: "1.2rem" }}><strong>Status</strong></Card.Header>
-          <Card.Body>
+        <div className="card ml-2 border-white bg-dark">
+          <h5 className="text-white" style={{ fontSize: "24px", paddingTop:"10px" }}><strong>Status</strong></h5>
+          <hr style={{borderTop: "1px solid rgb(177,235,177)"}}></hr>
+          <div style={{ padding: "1rem 0rem 0rem 0rem" }}>
             {/* <Row>
               <Col>Memory</Col>
             </Row> */}
@@ -60,11 +61,11 @@ class Status extends Component {
                       trailColor: "#eee"
                     })}
                   >
-                    <div style={{ fontSize: "3rem", marginTop: "2rem", marginBottom: "0rem", paddingBottom: "0rem"}}>
+                    <div style={{ fontSize: "3rem", color:"white", marginTop: "2rem", marginBottom: "0rem", paddingBottom: "0rem"}}>
                       <strong>{this.state.speed}</strong>m/s
                     </div>
-                    <div style={{ fontSize: "1.6rem", marginTop: "2rem" }}>
-                      speed
+                    <div style={{ fontSize: "1.6rem", marginTop: "2rem", color:"white" }}>
+                      Speed
                     </div>
                   </CircularProgressbarWithChildren>
                 </Container>
@@ -78,7 +79,7 @@ class Status extends Component {
                     value={this.state.cpu / 100}
                     maxValue={1}
                   >
-                    <div style={{ fontSize: "1rem", marginTop: "1rem" }}>
+                    <div style={{ fontSize: "20px", marginTop: "1rem", color:"white" }}>
                       <strong>{this.state.cpu}%</strong>
                       <p>CPU</p>
                     </div>
@@ -92,7 +93,7 @@ class Status extends Component {
                     value={this.state.memory / 100}
                     maxValue={1}
                   >
-                    <div style={{ fontSize: "1rem", marginTop: "1rem" }}>
+                    <div style={{ fontSize: "20px", marginTop: "1rem", color:"white" }}>
                       <strong>{this.state.memory}%</strong>
                       <p>memory</p>
                     </div>
@@ -102,16 +103,16 @@ class Status extends Component {
             </Row>
             <Row style={{marginTop: "1.5rem"}}>
               <Col>
-                <ProgressBar variant="success" animated now={this.state.battery} label={`${this.state.battery}% Battery`}/>
+                <h5 style={{color: "white" }}>Battery: {this.state.battery}%</h5><ProgressBar variant="success" animated now={this.state.battery}/>
               </Col>
             </Row>
-            <Row>
+            {/* <Row>
               <Col>
                 <LineChart />
               </Col>
-            </Row>
-          </Card.Body>
-        </Card>
+            </Row> */}
+          </div>
+        </div>
       </Container>
     )
   }

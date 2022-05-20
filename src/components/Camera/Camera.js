@@ -25,7 +25,7 @@ class Camera extends Component {
       this.ros = this.props.ros;
       this.subCamera = new ROSLIB.Topic({
         ros: this.ros,
-        name: '/camera/rgb/image_rect_color/compressed',
+        name: '/camera_01/rgb/image_rect_color/compressed',
         messageType: 'sensor_msgs/CompressedImage'
       });
     }
@@ -45,11 +45,12 @@ class Camera extends Component {
   render() {
     return (
       <Container className="box-margin">
-        <Card border="secondary">
-          <Card.Header style={{fontSize: "1.2rem" }}><strong>Camera</strong></Card.Header>
-          <Card.Body style={{padding: "1rem 0rem 0rem 0rem"}}>
+        <div className="card ml-2 border-white bg-dark">
+          <h5 className="text-white" style={{ fontSize: "24px", paddingTop:"10px"}}><strong>Camera 1</strong></h5>
+          <hr style={{borderTop: "1px solid rgb(177,235,177)"}}></hr>
+          <div style={{ padding: "1rem 0rem 0rem 0rem" }}>
             <Row>
-              <Col>Enable Camera</Col>
+              <Col className="text-white" style={{fontSize: "20px"}}>Enable Camera</Col>
               <Col>
                 <label className="switch">
                   <input onChange={(event) => {
@@ -66,8 +67,8 @@ class Camera extends Component {
             <Container className="camera-container">
               <img id="camera_id" width={320} src={tempImage} alt="new"></img>
             </Container>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </Container>
     )
   }

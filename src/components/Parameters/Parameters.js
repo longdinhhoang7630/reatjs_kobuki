@@ -62,12 +62,13 @@ class Parameters extends Component {
     })
     return (
       <Container className="box-margin">
-        <Card border="secondary">
-          <Card.Header style={{fontSize: "1.2rem" }}><strong>Parameters</strong></Card.Header>
-          <Card.Body>
+       <div className="card ml-2 border-white bg-dark">
+          <h5 className="text-white" style={{ fontSize: "24px", paddingTop:"10px" }}><strong>Parameters</strong></h5>
+          <hr style={{borderTop: "1px solid rgb(177,235,177)"}}></hr>
+          <div style={{ padding: "1rem 0rem 0rem 0rem", fontSize: "20px" }} className="text-white">
             {param_list}
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </Container>
     );
   }

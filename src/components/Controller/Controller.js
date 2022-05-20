@@ -212,11 +212,12 @@ class Controller extends Component {
   render() {
     return (
       <Container className="box-margin">
-        <Card border="secondary">
-          <Card.Header style={{fontSize: "1.2rem" }}><strong>Controller</strong></Card.Header>
-          <Card.Body>
-            <Row sm={1} md={2} lg={2}>
-              <Col>Keyboard Control</Col>
+       <div className="card ml-2 border-white bg-dark">
+          <h5 className="text-white" style={{ fontSize: "24px", paddingTop:"10px" }}><strong>Controller</strong></h5>
+          <hr style={{borderTop: "1px solid rgb(177,235,177)"}}></hr>
+          <div style={{ padding: "1rem 0rem 0rem 0rem" }}>
+            <Row >
+              <Col style={{ fontSize: "20px", color:"white"}}>Enable Control</Col>
               <Col>
                 <label className="switch">
                   <input onChange={this.onChangeKeyboardControl} checked={this.state.keyboard_enable} type="checkbox" />
@@ -243,7 +244,7 @@ class Controller extends Component {
               <Col><Button variant="secondary" size="lg" style={{ width: "100%", height: "6ex", margin: "0.75ex" }}>Shift</Button></Col>
             </Row> */}
             <Row style={{marginTop: "1rem"}}>
-              <Col sm={4}><p style={{margin: "0.5rem", fontSize: "1.1rem", textAlign: "center"}}>Mode</p></Col>
+              <Col sm={4}><p style={{margin: "0.5rem", fontSize: "1.1rem", textAlign: "center", color:"white"}}>Mode</p></Col>
               <Col>
                 <ButtonGroup toggle>
                   {radios.map((radio, idx) => (
@@ -265,8 +266,8 @@ class Controller extends Component {
                 </ButtonGroup>
               </Col>
             </Row>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </Container>
     )
   }

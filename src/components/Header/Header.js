@@ -45,7 +45,7 @@ class Header extends Component {
   render() {
     return (
       <Container className="header-common">
-        <Alert variant={this.state.isConnected ? "success" : "danger"} style={{margin: "0"}}>
+        <Alert variant={this.state.isConnected ? "success" : "danger"} style={{margin: "0", fontSize: "24px"}}>
           {this.state.isConnected ? "Server is online !" : "Server is not available"}
         </Alert>
         {/* <form onSubmit={this.handleSubmit} style={{ margin: "0 auto", width: "45%" }}>
